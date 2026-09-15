@@ -1,0 +1,30 @@
+[
+  {
+    "path": "assets/documentos/pf-fig216-foto.jpg",
+    "messageId": "ciro-foto-216",
+    "sourceId": "pf-3298613",
+    "page": 205,
+    "figure": "216",
+    "sha256": "f286579fa31c472ec140c9cd9fbeb62872d0db8e0d387c8391d5dabbc46767d0",
+    "width": 183,
+    "height": 247,
+    "method": "pdfimages -f 205 -l 205 -j; imagem 1, objeto PDF 1190. Sem edição.",
+    "status": "Reprodução documental extraída do PDF público; arquivo original da conversa não obtido.",
+    "reproduction": "Trecho visual do documento público para auditoria da mensagem citada. A imagem de terceiro não recebe a licença MIT do código; preservada atribuição e ligação à página original.",
+    "accessedAt": "2026-09-15"
+  },
+  {
+    "path": "assets/documentos/pf-fig191-convite.jpg",
+    "messageId": "luiz-renno-fig191-04",
+    "sourceId": "pf-3298613",
+    "page": 185,
+    "figure": "191",
+    "sha256": "b3007063570f85bed83fba23d7328fa004e271b00e81a3dad69a5c92209d84f3",
+    "width": 160,
+    "height": 273,
+    "method": "pdfimages -f 185 -l 185 -j; imagem 0, objeto PDF 1112. Imagem inteira, sem edição, recorte ou ampliação.",
+    "status": "Reprodução integral da imagem do convite incorporada ao relatório. Não corresponde à obtenção do arquivo original DigitalInviteVersão 2.",
+    "reproduction": "Citação visual documental vinculada ao anexo e à página de origem. Imagem de terceiro, não licenciada sob MIT; não autoriza uso promocional ou redistribuição desvinculada da fonte.",
+    "accessedAt": "2026-09-15"
+  }
+]

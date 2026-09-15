@@ -1,0 +1,13 @@
+WhatsAppReal.html
+WhatsAppReal_files/
+*WhatsAppReal*
+node_modules/
+dist/
+tmp/
+test-results/
+playwright-report/
+.env
+.env.*
+!.env.example
+
+*.tsbuildinfo

@@ -28,9 +28,6 @@ jobs:
       - run: npm run build
       - run: npx playwright install --with-deps chromium
       - run: npm run test:e2e
-      - name: Preparar Pages
-        if: github.repository == 'valmojr/VorcaroZap' && github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
-        uses: actions/configure-pages@v5
       - name: Enviar somente a distribuição pública
         if: github.repository == 'valmojr/VorcaroZap' && github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v4
@@ -53,6 +50,8 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - name: Preparar Pages
+        uses: actions/configure-pages@v5
       - name: Publicar artefato validado
         id: deployment
         uses: actions/deploy-pages@v4

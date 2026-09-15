@@ -52,6 +52,8 @@ jobs:
     steps:
       - name: Preparar Pages
         uses: actions/configure-pages@v5
+        with:
+          enablement: true
       - name: Publicar artefato validado
         id: deployment
         uses: actions/deploy-pages@v4

@@ -50,19 +50,21 @@ const hashes = new Set(
   ),
 );
 // Sem gravar objetos ou divulgar o conteúdo da referência pessoal.
-try {
-  const privateObjects = new Set(sensitive.map((p) =>
-    execFileSync("git", ["hash-object", "--stdin"], {
-      input: readFileSync(p), encoding: "utf8",
-    }).trim(),
-  ));
-  const objects = execFileSync("git", ["rev-list", "--objects", "--all"], {
-    encoding: "utf8", maxBuffer: 32 * 1024 * 1024,
-  });
-  if (objects.split("\n").some((line) => privateObjects.has(line.split(" ")[0])))
-    fail("Cópia integral da referência pessoal encontrada no histórico, mesmo renomeada.");
-} catch {
-  fail("Não foi possível verificar cópias pessoais no histórico.");
+if (sensitive.length) {
+  try {
+    const privateObjects = new Set(sensitive.map((p) =>
+      execFileSync("git", ["hash-object", "--stdin"], {
+        input: readFileSync(p), encoding: "utf8",
+      }).trim(),
+    ));
+    const objects = execFileSync("git", ["rev-list", "--objects", "--all"], {
+      encoding: "utf8", maxBuffer: 32 * 1024 * 1024,
+    });
+    if (objects.split("\n").some((line) => privateObjects.has(line.split(" ")[0])))
+      fail("Cópia integral da referência pessoal encontrada no histórico, mesmo renomeada.");
+  } catch {
+    fail("Não foi possível verificar cópias pessoais no histórico.");
+  }
 }
 for (const p of tracked.filter((p) => !forbidden.test(p))) {
   try {
